@@ -29,13 +29,14 @@ client = interactions.Client(token= TOKEN)
                 interactions.Choice(name="Breeze", value="Breeze"),
                 interactions.Choice(name="Split", value="Split"),
                 interactions.Choice(name="Haven", value="Haven"),
+                interactions.Choice(name="Pearl", value="Pearl"),
                 interactions.Choice(name="Default", value="Default"),
             ], 
         ),
     ],
 )
 async def map_slash(ctx: interactions.CommandContext, map_to_remove : str = ""):
-    theMap = ["Ascent", "Bind", "Fracture", "Icebox", "Breeze", "Split", "Haven"]
+    theMap = ["Ascent", "Bind", "Fracture", "Icebox", "Breeze", "Split", "Haven", "Pearl"]
     removeMapList = map_to_remove.split(' ')
     removeMapList = [word.capitalize() for word in removeMapList]
     for i in range(len(removeMapList)):
@@ -78,7 +79,7 @@ async def on_ready():
 
 @bot.command(name='map', brief="Picks a random map", description = "Picks a random map, to delete a map just type the map out followed by a space i.e \n'$map icebox`\nthis will delete icebox out of the list of maps\n\ndoing `$map default` will delete Breeze and Fracture")
 async def randomMap(ctx, *mapToRemove):
-    theMap = ["Ascent", "Bind", "Fracture", "Icebox", "Breeze", "Split", "Haven"]
+    theMap = ["Ascent", "Bind", "Fracture", "Icebox", "Breeze", "Split", "Haven", "Pearl"]
     removeMap = ', '.join(mapToRemove)
     removeMapList = removeMap.split(', ')
     removeMapList = [word.capitalize() for word in removeMapList]
@@ -97,7 +98,7 @@ async def randomMap(ctx, *mapToRemove):
 
 @bot.command(name = 'agent', brief = "Picks a random map")
 async def randomAgent(ctx, *agentToRemove):
-    Agents = ["Brimstone", "Viper", "Omen", "Killjoy", "Cypher", "Sova", "Sage", "Phoenix", "Jett", "Reyna", "Raze", "Breach", "Skye", "Yoru", "Astra", "KAY/O", "Chamber", "Neon", "Fade"]
+    Agents = ["Brimstone", "Viper", "Omen", "Killjoy", "Cypher", "Sova", "Sage", "Phoenix", "Jett", "Reyna", "Raze", "Breach", "Skye", "Yoru", "Astra", "KAY/O", "Chamber", "Neon", "Fade", "Harbor"]
     removeAgent = ', '.join(agentToRemove)
     removeAgentList = removeAgent.split(', ')
     removeAgentList  = [word.capitalize() for word in removeAgentList]
