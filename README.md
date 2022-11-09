@@ -8,7 +8,7 @@ Get a random Valorant map from the list of maps!
 ## 8Ball ##
 Go ahead, ask a question and try your luck
 
-##Random Agent Picker##
+## Random Agent Picker ##
 Randomly picks your Valorant agent if you want to roulette!
 
 ## Say ##
