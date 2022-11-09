@@ -75,7 +75,7 @@ async def eightBall(ctx, *ball):
 
 @bot.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Game('with David\'s balls'))
+    await bot.change_presence(activity=discord.Game('Playing Valorant!'))
 
 @bot.command(name='map', brief="Picks a random map", description = "Picks a random map, to delete a map just type the map out followed by a space i.e \n'$map icebox`\nthis will delete icebox out of the list of maps\n\ndoing `$map default` will delete Breeze and Fracture")
 async def randomMap(ctx, *mapToRemove):
