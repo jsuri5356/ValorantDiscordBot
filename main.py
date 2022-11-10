@@ -206,8 +206,8 @@ async def on_command_error(ctx, error):
 # for the bot to join the vc you're in rn voiceChannel = discord.utils.get(ctx.guild.voice_channels, name=ctx.author.voice.channel.name)
 
 if __name__ == "__main__":
-    loop = asyncio.new_event_loop()
-    asyncio.set_event_loop(loop)
+    loop = asyncio.get_event_loop()
+    #asyncio.set_event_loop(loop)
     task2 = loop.create_task(bot.start(TOKEN))
     task1 = loop.create_task(slash._ready())
 
