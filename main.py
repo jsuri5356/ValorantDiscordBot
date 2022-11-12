@@ -54,6 +54,24 @@ async def map_slash(ctx: interactions.CommandContext, map_to_remove : str = ""):
     await ctx.send("Your map is " + theMap[index])
 
 
+@slash.command(
+    name="sayyyy",
+    description="Make the bot say something!",
+    options=[
+        interactions.Option(
+            name="say",
+            description="What do you want the bot to say?",
+            type=interactions.OptionType.STRING,
+            required=True,
+        ),
+    ],
+)
+
+# emphemeral is how you hide the reply from a slash command
+async def slash_say(ctx: interactions.CommandContext, say:str):
+    await ctx.send("Saying " + say, ephemeral=True)
+    await ctx.channel.send(say)
+    
 @bot.command(name = "8ball", brief = "Go ahead, ask a quesiton")
 async def eightBall(ctx, *ball):
     array = ["It is certain.", "It is decidedly so.", "Without a doubt.", "Yes definitely.", "You may rely on it.", "As I see it, yes.", "Most likely.", "Outlook good.", "Yes.", "Signs point to yes.", "Reply hazy, try again.", "Ask again later.", "Better not tell you now.", "Cannot predict now.", "Concentrate and ask again.", "Don't count on it.", "My reply is no.", "My sources say no.", "Outlook not so good.", "Very doubtful."]
