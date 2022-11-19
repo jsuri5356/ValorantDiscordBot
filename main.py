@@ -71,6 +71,14 @@ async def map_slash(ctx: interactions.CommandContext, map_to_remove : str = ""):
 async def slash_say(ctx: interactions.CommandContext, say:str):
     await ctx.send("Saying " + say, ephemeral=True)
     await ctx.channel.send(say)
+@slash.command(
+    name="ping",
+    description="Display the bots ping",
+)
+
+async def slash_ping(ctx: interactions.CommandContext):
+    await ctx.send(f':ping_pong: {round (bot.latency * 1000)} ms', ephemeral=True)
+    
     
 @bot.command(name = "8ball", brief = "Go ahead, ask a quesiton")
 async def eightBall(ctx, *ball):
